@@ -1,2 +1,2 @@
 # AWS-Disaster-recovery-wordpress
-A highly available, fault-tolerant WordPress architecture built on AWS with automated S3 disaster recovery syncing.
+This project serves as a comprehensive demonstration of cloud infrastructure automation and management using Amazon Web Services (AWS). The core objective is to move beyond manual "Click-Ops" by leveraging Infrastructure as Code (IaC) through Terraform to build environments that are consistent, repeatable, and scalable. By utilizing Terraform, the entire lifecycle of the infrastructure—from provisioning networking components like VPCs, subnets, and Route Tables to deploying compute and database resources—is managed through code, ensuring that the architecture is documented and version-controlled.
