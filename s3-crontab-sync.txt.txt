@@ -1,0 +1,25 @@
+ 
+ AWS S3 Automated Disaster Recovery Sync :
+  
+  These crontab jobs run every 2 minutes (*/2 * * * *) 
+  to keep the Production and DR servers mirrored.
+
+ 
+ PRODUCTION SERVER CRONTAB (Pushing to S3):
+ 
+Pushes the media uploads to the media bucket
+* aws s3 sync --delete /var/www/html/wp-content/uploads s3://wordpressprodbuck
+
+ Pushes the core WordPress code and configuration to the code bucket
+* aws s3 sync --delete /var/www/html/ s3://wordpressdrbuck
+
+
+
+ DISASTER RECOVERY SERVER CRONTAB (Pulling from S3):
+ 
+ Pulls the media uploads down from the media bucket
+
+* aws s3 sync --delete s3://wordpressprodbuck /var/www/html/wp-content/uploads
+
+ Pulls the core WordPress code and configuration down from the code bucket
+* aws s3 sync --delete s3://wordpressdrbuck /var/www/html/
